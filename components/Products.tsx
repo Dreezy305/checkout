@@ -13,12 +13,18 @@ import {
   SelectChangeEvent,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 function Product(): JSX.Element {
-  const [checked, setChecked] = React.useState(true);
+  const [checked, setChecked] = useState<boolean>(true);
+  const [age, setAge] = useState<string>("");
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
+  };
+
+  const onChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value as string);
   };
   const subHeader = (): JSX.Element => {
     return <span>Select All Items</span>;
@@ -85,7 +91,31 @@ function Product(): JSX.Element {
                 This will be a gift. &nbsp;<Link href="/">Learn more</Link>
               </Typography>
             </Typography>
-            <Box></Box>
+            <Box className="grid grid-cols-4 gap-x-2 items-baseline">
+              <FormControl fullWidth={false} className="">
+                <InputLabel id="demo-simple-select-label">Age</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={age}
+                  label="Age"
+                  onChange={onChange}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>
+              <Box className="flex items-center justify-center">
+                <Typography component={"span"}>Delete</Typography>
+              </Box>
+              <Box className="flex items-center justify-center">
+                <Typography component={"span"}>Save for later</Typography>
+              </Box>
+              <Box className="flex items-center justify-center">
+                <Typography component={"span"}>See more like this</Typography>
+              </Box>
+            </Box>
           </Box>
         </Box>
 
