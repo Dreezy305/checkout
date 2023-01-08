@@ -7,7 +7,7 @@ type props = {
   children: React.ReactNode;
 };
 
-function Layout({ children }: props): JSX.Element {
+function Layout(): JSX.Element {
   return (
     <>
       <Head>
