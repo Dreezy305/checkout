@@ -11,7 +11,7 @@ type props = {
   children: React.ReactNode;
 };
 
-export default function Home({ children }: props) {
+export default function Home({ children }: props): JSX.Element {
   return (
     <>
       <Head>
@@ -20,11 +20,11 @@ export default function Home({ children }: props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.productList}>
+      <main className={`${styles.main} space-x-5`}>
+        <div className={`${styles.productList} w-3/4`}>
           <Product />
         </div>
-        <div className={styles.subTotalAndRelated}>
+        <div className={`${styles.subTotalAndRelated} space-y-4 w-1/4`}>
           <Subtotal />
           <RelatedItems />
         </div>

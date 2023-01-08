@@ -11,6 +11,8 @@
 }
 
 .subTotalAndRelated {
+  display: flex;
+  flex-direction: column;
 }
 
 .description {

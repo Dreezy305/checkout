@@ -1,7 +1,8 @@
+import { Card, CardMedia } from "@mui/material";
 import React from "react";
 
 function RelatedItems() {
-  return <div>RelatedItems</div>;
+  return <Card>RelatedItems</Card>;
 }
 
 export default RelatedItems;
