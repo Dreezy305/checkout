@@ -9,6 +9,10 @@ import {
 import React from "react";
 
 function Product(): JSX.Element {
+  const [checked, setChecked] = React.useState(true);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
   const subHeader = (): JSX.Element => {
     return <span>Select All Items</span>;
   };
@@ -20,6 +24,11 @@ function Product(): JSX.Element {
         sx={{ display: "flex", flexDirection: "row" }}
         className="py-3 items-start justify-between"
       >
+        <Checkbox
+          checked={checked}
+          onChange={handleChange}
+          inputProps={{ "aria-label": "controlled" }}
+        />
         <CardMedia
           component="img"
           sx={{ width: 151 }}
