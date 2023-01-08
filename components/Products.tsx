@@ -5,7 +5,12 @@ import {
   CardHeader,
   CardMedia,
   Checkbox,
+  FormControl,
+  InputLabel,
   Link,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -80,7 +85,7 @@ function Product(): JSX.Element {
                 This will be a gift. &nbsp;<Link href="/">Learn more</Link>
               </Typography>
             </Typography>
-            <CardContent></CardContent>
+            <Box></Box>
           </Box>
         </Box>
 
