@@ -1,9 +1,11 @@
 import {
   Box,
   Card,
+  CardContent,
   CardHeader,
   CardMedia,
   Checkbox,
+  Link,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -22,28 +24,68 @@ function Product(): JSX.Element {
       <hr />
       <Box
         sx={{ display: "flex", flexDirection: "row" }}
-        className="py-3 items-start justify-between"
+        className="items-start justify-between"
       >
+        {/* LEFT */}
         <Box
-          sx={{ display: "flex", flexDirection: "row" }}
-          className="space-x-3"
+          sx={{ display: "flex", flexDirection: "row", width: "90%" }}
+          className="space-x-1 py-5"
         >
           <Checkbox
             checked={checked}
             onChange={handleChange}
             inputProps={{ "aria-label": "controlled" }}
+            sx={{ boxShadow: "none", outline: "none" }}
           />
           <CardMedia
             component="img"
-            sx={{ width: 151 }}
+            sx={{ width: "25%" }}
             image="https://res.cloudinary.com/africahacks/image/upload/v1606074022/chimoney/Purple-100_z05fgn.jpg"
             alt="Live from space album cover"
             className=""
           />
-          <Box sx={{ display: "flex", flexDirection: "column" }}>hello</Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardContent
+              sx={{ display: "flex", flexDirection: "column" }}
+              component="span"
+            >
+              <Typography component="span" className="font-semibold">
+                Adobe Acrobat Professional DC | PDF converter | 12-month
+                Subscription with auto-renewal, PC/Mac
+              </Typography>
+              <Typography
+                component="span"
+                className="flex flex-col items-start "
+              >
+                <Typography>In Stock</Typography>
+                <Typography component="span">
+                  Shipped from: Amazon.com Services LLC
+                </Typography>
+              </Typography>
+            </CardContent>
+            <Typography component={"span"} className="">
+              <Checkbox
+                checked={checked}
+                size="small"
+                onChange={handleChange}
+                inputProps={{ "aria-label": "controlled" }}
+                sx={{ boxShadow: "none", outline: "none" }}
+              />
+              <Typography component="span">
+                This will be a gift. &nbsp;<Link href="/">Learn more</Link>
+              </Typography>
+            </Typography>
+            <CardContent></CardContent>
+          </Box>
         </Box>
 
-        <Typography component={"div"} variant={"h6"} className="float-right">
+        {/* RIGHT */}
+        <Typography component={"span"} className="float-right pt-9">
           $179.99
         </Typography>
       </Box>
