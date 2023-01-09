@@ -125,4 +125,14 @@ a {
     font-family: "Amazon-Ember-thin";
     src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Th.ttf");
   }
+
+  @font-face {
+    font-family: "Amazon-Ember-heavy";
+    src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_He.ttf");
+  }
+
+   @font-face {
+    font-family: "Amazon-Ember-light";
+    src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Lt.ttf");
+  }
 }

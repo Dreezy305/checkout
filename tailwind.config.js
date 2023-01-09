@@ -9,6 +9,8 @@ module.exports = {
       AmazonEmberMedium: "Amazon-Ember-medium",
       AmazonEmberRegular: "Amazon-Ember-regular",
       AmazonEmberThin: "Amazon-Ember-thin",
+      AmazonEmberHeavy: "Amazon-Ember-heavy",
+      AmazonEmberLight: "Amazon-Ember-light",
     },
     fontSize: {
       font12: "12px",

@@ -72,7 +72,7 @@ function Product(): JSX.Element {
             >
               <Typography
                 component="span"
-                className="font-semibold font-AmazonEmberRegular text-font18"
+                className="font-semibold font-AmazonEmberLight text-font18"
               >
                 Adobe Acrobat Professional DC | PDF converter | 12-month
                 Subscription with auto-renewal, PC/Mac
