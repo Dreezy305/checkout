@@ -5,12 +5,7 @@ import {
   CardHeader,
   CardMedia,
   Checkbox,
-  FormControl,
-  InputLabel,
   Link,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
@@ -22,16 +17,19 @@ function Product(): JSX.Element {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
-
-  const onChange = (event: SelectChangeEvent) => {
+  const onChange = (event: any) => {
     setAge(event.target.value as string);
   };
-  const subHeader = (): JSX.Element => {
-    return <span>Select All Items</span>;
-  };
+  const subHeader = (
+    <Link className="text-link text-font14 no-underline cursor-pointer hover:underline">
+      Deselect All Items
+    </Link>
+  );
+  const title = <h5 className="">Shopping Cart</h5>;
+
   return (
     <Card sx={{}} className="px-3">
-      <CardHeader title="Shopping Cart" subheader="Select All Items" />
+      <CardHeader title={title} subheader={subHeader} />
       <hr />
       <Box
         sx={{ display: "flex", flexDirection: "row" }}
@@ -91,29 +89,36 @@ function Product(): JSX.Element {
                 This will be a gift. &nbsp;<Link href="/">Learn more</Link>
               </Typography>
             </Typography>
-            <Box className="grid grid-cols-4 gap-x-2 items-baseline">
-              <FormControl fullWidth={false} className="">
-                <InputLabel id="demo-simple-select-label">Age</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={age}
-                  label="Age"
-                  onChange={onChange}
+            <Box className="flex flex-row space-x-2 items-baseline">
+              <Box>
+                <select className="w-20 py-2 px-2 rounded-lg">
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </Box>
+              <Box className="flex items-center justify-center border-l-2 border-r-2 px-3">
+                <Typography
+                  component={"span"}
+                  className="text-link text-font14 no-underline cursor-pointer hover:underline"
                 >
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-              <Box className="flex items-center justify-center">
-                <Typography component={"span"}>Delete</Typography>
+                  Delete
+                </Typography>
               </Box>
-              <Box className="flex items-center justify-center">
-                <Typography component={"span"}>Save for later</Typography>
+              <Box className="flex items-center justify-center border-r-2 px-3">
+                <Typography
+                  component={"span"}
+                  className="text-link text-font14 no-underline cursor-pointer hover:underline"
+                >
+                  Save for later
+                </Typography>
               </Box>
-              <Box className="flex items-center justify-center">
-                <Typography component={"span"}>See more like this</Typography>
+              <Box className="flex items-center justify-center px-3">
+                <Typography
+                  component={"span"}
+                  className="text-link text-font14  no-underline cursor-pointer hover:underline"
+                >
+                  See more like this
+                </Typography>
               </Box>
             </Box>
           </Box>
