@@ -8,16 +8,18 @@ module.exports = {
     fontFamily: {
       AmazonEmberMedium: "Amazon-Ember-medium",
       AmazonEmberRegular: "Amazon-Ember-regular",
-      AmazonEmberRegular: "Amazon-Ember-thin",
+      AmazonEmberThin: "Amazon-Ember-thin",
     },
     fontSize: {
       font12: "12px",
       font14: "14px",
+      font18: "18px",
     },
     extend: {
       colors: {
         link: "#007185",
         title: "#0F1111",
+        grey: "#565959",
       },
       keyframes: {},
     },

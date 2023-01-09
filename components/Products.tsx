@@ -70,21 +70,44 @@ function Product(): JSX.Element {
               sx={{ display: "flex", flexDirection: "column" }}
               component="span"
             >
-              <Typography component="span" className="font-semibold">
+              <Typography
+                component="span"
+                className="font-semibold font-AmazonEmberRegular text-font18"
+              >
                 Adobe Acrobat Professional DC | PDF converter | 12-month
                 Subscription with auto-renewal, PC/Mac
               </Typography>
               <Typography
                 component="span"
-                className="flex flex-col items-start "
+                className="flex flex-col items-start pt-2"
               >
-                <Typography>In Stock</Typography>
-                <Typography component="span">
+                <Typography
+                  component={"span"}
+                  className="font-AmazonEmberRegular text-font12"
+                >
+                  In Stock
+                </Typography>
+                <Typography
+                  component="span"
+                  className="font-AmazonEmberRegular text-font12"
+                >
                   Shipped from: Amazon.com Services LLC
+                </Typography>
+                <Typography
+                  component="span"
+                  className="font-AmazonEmberRegular text-font12"
+                >
+                  <span className="text-grey">This will be a gift.</span>
+                  <Link
+                    href="/"
+                    className="font-AmazonEmberRegular text-link text-font12 no-underline hover:underline"
+                  >
+                    Learn more
+                  </Link>
                 </Typography>
               </Typography>
             </CardContent>
-            <Typography component={"span"} className="">
+            {/* <Typography component={"span"} className="">
               <Checkbox
                 checked={checked}
                 size="small"
@@ -92,16 +115,19 @@ function Product(): JSX.Element {
                 inputProps={{ "aria-label": "controlled" }}
                 sx={{ boxShadow: "none", outline: "none" }}
               />
-              <Typography component="span" className="font-AmazonEmberRegular text-font12">
-                This will be a gift. &nbsp;
+              <Typography
+                component="span"
+                className="font-AmazonEmberRegular text-font12"
+              >
+                <span className="text-grey">This will be a gift.</span>
                 <Link
                   href="/"
-                  className="font-AmazonEmberRegular text-link text-font12"
+                  className="font-AmazonEmberRegular text-link text-font12 no-underline hover:underline"
                 >
                   Learn more
                 </Link>
               </Typography>
-            </Typography>
+            </Typography> */}
             <Box className="flex flex-row space-x-2 items-baseline">
               <Box>
                 <select className="w-20 py-2 px-2 rounded-lg">
