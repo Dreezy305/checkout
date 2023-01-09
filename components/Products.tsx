@@ -21,11 +21,18 @@ function Product(): JSX.Element {
     setAge(event.target.value as string);
   };
   const subHeader = (
-    <Link className="text-link text-font14 no-underline cursor-pointer hover:underline">
+    <Typography
+      component={"span"}
+      className="text-link text-font14 no-underline cursor-pointer hover:underline font-AmazonEmberRegular"
+    >
       Deselect All Items
-    </Link>
+    </Typography>
   );
-  const title = <h5 className="">Shopping Cart</h5>;
+  const title = (
+    <Typography variant={"h5"} className="text-title font-AmazonEmberMedium">
+      Shopping Cart
+    </Typography>
+  );
 
   return (
     <Card sx={{}} className="px-3">
@@ -85,8 +92,14 @@ function Product(): JSX.Element {
                 inputProps={{ "aria-label": "controlled" }}
                 sx={{ boxShadow: "none", outline: "none" }}
               />
-              <Typography component="span">
-                This will be a gift. &nbsp;<Link href="/">Learn more</Link>
+              <Typography component="span" className="font-AmazonEmberRegular text-font12">
+                This will be a gift. &nbsp;
+                <Link
+                  href="/"
+                  className="font-AmazonEmberRegular text-link text-font12"
+                >
+                  Learn more
+                </Link>
               </Typography>
             </Typography>
             <Box className="flex flex-row space-x-2 items-baseline">
@@ -99,7 +112,7 @@ function Product(): JSX.Element {
               <Box className="flex items-center justify-center border-l-2 border-r-2 px-3">
                 <Typography
                   component={"span"}
-                  className="text-link text-font14 no-underline cursor-pointer hover:underline"
+                  className="text-link text-font14 no-underline cursor-pointer hover:underline font-AmazonEmberRegular"
                 >
                   Delete
                 </Typography>
@@ -107,7 +120,7 @@ function Product(): JSX.Element {
               <Box className="flex items-center justify-center border-r-2 px-3">
                 <Typography
                   component={"span"}
-                  className="text-link text-font14 no-underline cursor-pointer hover:underline"
+                  className="text-link text-font14 no-underline cursor-pointer hover:underline font-AmazonEmberRegular"
                 >
                   Save for later
                 </Typography>
@@ -115,7 +128,7 @@ function Product(): JSX.Element {
               <Box className="flex items-center justify-center px-3">
                 <Typography
                   component={"span"}
-                  className="text-link text-font14  no-underline cursor-pointer hover:underline"
+                  className="text-link text-font14  no-underline cursor-pointer hover:underline font-AmazonEmberRegular"
                 >
                   See more like this
                 </Typography>
