@@ -11,6 +11,7 @@ module.exports = {
       AmazonEmberThin: "Amazon-Ember-thin",
       AmazonEmberHeavy: "Amazon-Ember-heavy",
       AmazonEmberLight: "Amazon-Ember-light",
+      AmazonEmberBold: "Amazon-Ember-bold",
     },
     fontSize: {
       font12: "12px",
@@ -22,6 +23,7 @@ module.exports = {
         link: "#007185",
         title: "#0F1111",
         grey: "#565959",
+        success: "#007600",
       },
       keyframes: {},
     },

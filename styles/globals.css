@@ -135,4 +135,9 @@ a {
     font-family: "Amazon-Ember-light";
     src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Lt.ttf");
   }
+
+    @font-face {
+    font-family: "Amazon-Ember-bold";
+    src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Bd.ttf");
+  }
 }
