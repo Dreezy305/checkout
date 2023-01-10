@@ -14,6 +14,7 @@ module.exports = {
       AmazonEmberBold: "Amazon-Ember-bold",
     },
     fontSize: {
+      font11: "11px",
       font12: "12px",
       font13: "13px",
       font14: "14px",
@@ -27,6 +28,7 @@ module.exports = {
         success: "#007600",
         yellowBg: "#FFD814",
         yellowBorder: "#FCD200",
+        lightGrey: "#555",
       },
       keyframes: {},
     },
