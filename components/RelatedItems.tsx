@@ -1,8 +1,8 @@
+import { Card, CardMedia, CardHeader, Typography } from "@mui/material";
 import React from "react";
-import { Card, CardMedia } from "@mui/material";
 
 function RelatedItems() {
-  return <Card>RelatedItems</Card>;
+  return <Card sx={{ borderRadius: "8px" }}></Card>;
 }
 
 export default RelatedItems;

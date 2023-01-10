@@ -15,6 +15,7 @@ module.exports = {
     },
     fontSize: {
       font12: "12px",
+      font13: "13px",
       font14: "14px",
       font18: "18px",
     },
@@ -24,6 +25,8 @@ module.exports = {
         title: "#0F1111",
         grey: "#565959",
         success: "#007600",
+        yellowBg: "#FFD814",
+        yellowBorder: "#FCD200",
       },
       keyframes: {},
     },

@@ -44,7 +44,7 @@ function Product(): JSX.Element {
   );
 
   return (
-    <Card sx={{}} className="px-3">
+    <Card sx={{ borderRadius: "0px" }} className="px-3">
       <CardHeader title={title} subheader={subHeader} />
       {[1, 2, 3, 4, 5].map((i) => {
         return (
@@ -143,7 +143,7 @@ function Product(): JSX.Element {
                     component={"div"}
                     className="flex flex-row space-x-2 items-baseline pl-4"
                   >
-                    <select className="w-20 py-2 px-2 rounded-[8px]">
+                    <select className="w-20 py-1 px-2 rounded-[8px]">
                       <option>1</option>
                       <option>2</option>
                     </select>
