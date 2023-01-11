@@ -131,13 +131,30 @@ a {
     src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_He.ttf");
   }
 
-   @font-face {
+  @font-face {
     font-family: "Amazon-Ember-light";
     src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Lt.ttf");
   }
 
-    @font-face {
+  @font-face {
     font-family: "Amazon-Ember-bold";
     src: url("../public/fonts/Amazon_Typefaces_Complete_Font_Set_Mar2020/Ember/AmazonEmber_Bd.ttf");
   }
+}
+
+.borders {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+  border-color: #d5d9d9;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.buymore {
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 135px;
+  padding: 2px;
 }

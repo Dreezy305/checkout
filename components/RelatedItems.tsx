@@ -34,29 +34,61 @@ function RelatedItems() {
       <CardHeader title={title} subheader={subHeader} />
       <CardContent
         sx={{ display: "flex", flexDirection: "column" }}
-        className="space-y-3"
+        className="space-y-2"
       >
-        <Box
-          sx={{ display: "flex", flexDirection: "row" }}
-          className="space-x-2 align-baseline"
-        >
-          <CardMedia
-            component="img"
-            sx={{ width: "23%", height: "100%" }}
-            image="https://res.cloudinary.com/africahacks/image/upload/v1606074022/chimoney/Purple-100_z05fgn.jpg"
-            alt="Live from space album cover"
-            className=""
-          />
+        {[1, 2, 3].map((i) => {
+          return (
+            <>
+              <Box
+                sx={{ display: "flex", flexDirection: "row" }}
+                className="space-x-1 items-start w-full"
+              >
+                <CardMedia
+                  component="img"
+                  sx={{ width: "23%", height: "100%" }}
+                  image="https://res.cloudinary.com/africahacks/image/upload/v1606074022/chimoney/Purple-100_z05fgn.jpg"
+                  alt="Live from space album cover"
+                  className="pt-4"
+                />
 
-          <CardContent sx={{ display: "flex", flexDirection: "column" }}>
-            <Typography component={"div"}>
-              <Typography component={"span"} className="truncate">
-                Adobe Acrobat Professional DC | PDF converter | 12-month
-                Subscription with auto-renewal, PC/Mac
-              </Typography>
-            </Typography>
-          </CardContent>
-        </Box>
+                <CardContent
+                  sx={{ display: "flex", flexDirection: "column" }}
+                  className="overflow-hidden w-5/6"
+                >
+                  <Typography
+                    component={"div"}
+                    className="flex flex-col space-y-1"
+                  >
+                    <Typography
+                      component={"span"}
+                      className="text-link text-font14 text-ellipsis overflow-hidden ... font-AmazonEmberRegular"
+                    >
+                      Adobe Acrobat Professional DC | PDF
+                    </Typography>
+                    <Typography
+                      component={"span"}
+                      className="font-AmazonEmberRegular text-link text-font12"
+                    >
+                      143
+                    </Typography>
+                    <Typography
+                      component={"span"}
+                      className="text-font13 text-brown font-AmazonEmberRegular"
+                    >
+                      $3,143
+                    </Typography>
+                    <Typography
+                      component={"div"}
+                      className="text-font11 font-AmazonEmberRegular buymore py-1 w-auto borders"
+                    >
+                      See all buying options
+                    </Typography>
+                  </Typography>
+                </CardContent>
+              </Box>
+            </>
+          );
+        })}
       </CardContent>
     </Card>
   );

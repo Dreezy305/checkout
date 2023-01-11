@@ -143,9 +143,16 @@ function Product(): JSX.Element {
                     component={"div"}
                     className="flex flex-row space-x-2 items-baseline pl-4"
                   >
-                    <select className="w-20 py-1 px-2 rounded-[8px]">
-                      <option>1</option>
-                      <option>2</option>
+                    <select className="w-20 py-1 px-2 borders outline-none shadow-none">
+                      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(
+                        (i: any, idx: any): JSX.Element => {
+                          return (
+                            <option value={i} key={idx + 1}>
+                              {i}
+                            </option>
+                          );
+                        }
+                      )}
                     </select>
 
                     <Box className="flex items-center justify-center border-l-2 border-r-2 px-3">
