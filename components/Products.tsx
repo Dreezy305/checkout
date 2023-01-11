@@ -46,12 +46,13 @@ function Product(): JSX.Element {
   return (
     <Card sx={{ borderRadius: "0px" }} className="px-3">
       <CardHeader title={title} subheader={subHeader} />
-      {[1, 2, 3, 4, 5].map((i) => {
+      {[1, 2, 3, 4, 5].map((i: any, index: any) => {
         return (
           <>
             <Box
               sx={{ display: "flex", flexDirection: "row" }}
               className="items-start justify-between pb-5 pt-4"
+              key={index}
             >
               {/* LEFT */}
               <Box

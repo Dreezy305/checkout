@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-function RelatedItems() {
+function Categories(): JSX.Element {
   const title = (
     <Typography
       variant={"h5"}
@@ -36,7 +36,7 @@ function RelatedItems() {
         sx={{ display: "flex", flexDirection: "column" }}
         className="space-y-2"
       >
-        {[1, 2, 3].map((i: any, index:any) => {
+        {[1, 2, 3].map((i: any, index: any) => {
           return (
             <>
               <Box
@@ -95,4 +95,4 @@ function RelatedItems() {
   );
 }
 
-export default RelatedItems;
+export default Categories;

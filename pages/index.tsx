@@ -1,17 +1,33 @@
-import { Inter } from "@next/font/google";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardHeader,
+  CardMedia,
+  Checkbox,
+  Link,
+  Rating,
+  Typography,
+} from "@mui/material";
 import Head from "next/head";
 import Product from "../components/Products";
 import RelatedItems from "../components/RelatedItems";
 import Subtotal from "../components/Subtotal";
 import styles from "../styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 type props = {
   children: React.ReactNode;
 };
 
 export default function Home({ children }: props): JSX.Element {
+  const title = (
+    <Typography
+      variant={"h5"}
+      className="text-title font-AmazonEmberMedium pb-3"
+    >
+      Gift Cards
+    </Typography>
+  );
   return (
     <>
       <Head>
@@ -21,12 +37,76 @@ export default function Home({ children }: props): JSX.Element {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} space-x-5`}>
-        <div className={`${styles.productList} w-3/4`}>
-          <Product />
-        </div>
         <div className={`${styles.subTotalAndRelated} space-y-4 w-1/4`}>
-          <Subtotal />
           <RelatedItems />
+        </div>
+        <div className={`${styles.productList} w-3/4`}>
+          <Card>
+            <CardHeader title={title} />
+            <Box sx={{ display: "flex" }} className="px-3 py-3">
+              <CardMedia
+                component="img"
+                sx={{ width: 180 }}
+                image="https://res.cloudinary.com/africahacks/image/upload/v1606074022/chimoney/Purple-100_z05fgn.jpg"
+                alt="Live from space album cover"
+              />
+              <Box
+                sx={{ display: "flex", flexDirection: "column" }}
+                className=""
+              >
+                <CardContent sx={{ flex: "1 0 auto" }} className="">
+                  <Link href="/" className="no-underline cursor-pointer">
+                    <Typography
+                      component="div"
+                      variant="h5"
+                      className="font-AmazonEmberRegular text-font18 leading-6 text-title"
+                    >
+                      Adobe Acrobat Professional DC | PDF converter | 12-month
+                      Subscription with auto-renewal, PC/Mac
+                    </Typography>
+                  </Link>
+                  <Typography
+                    component={"div"}
+                    className="flex flex-row items-end space-x-1"
+                  >
+                    <Typography
+                      component={"span"}
+                      className="text-font13 font-AmazonEmberRegular leading-3 pt-0.5 text-title"
+                    >
+                      4.5
+                    </Typography>
+                    <Rating
+                      name="half-rating"
+                      defaultValue={4.5}
+                      precision={0.5}
+                      size="small"
+                      readOnly
+                      className="pt-1"
+                    />
+                    <Typography
+                      component={"span"}
+                      className="text-font13 font-AmazonEmberRegular leading-4 text-link "
+                    >
+                      (6,145)
+                    </Typography>
+                  </Typography>
+                  <Typography
+                    component={"h5"}
+                    className="text-title text-font18 font-AmazonEmberBold pt-3"
+                  >
+                    $179.99
+                  </Typography>
+
+                  <Typography
+                    component={"span"}
+                    className="text-dark text-font14 cursor-text font-AmazonEmberRegular"
+                  >
+                    Ships to Nigeria
+                  </Typography>
+                </CardContent>
+              </Box>
+            </Box>
+          </Card>
         </div>
       </main>
     </>
