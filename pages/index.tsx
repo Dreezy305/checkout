@@ -55,7 +55,10 @@ export default function Home({ children }: props): JSX.Element {
                 className=""
               >
                 <CardContent sx={{ flex: "1 0 auto" }} className="">
-                  <Link href="/" className="no-underline cursor-pointer">
+                  <Link
+                    href="/"
+                    className="no-underline cursor-pointer hover:underline"
+                  >
                     <Typography
                       component="div"
                       variant="h5"
