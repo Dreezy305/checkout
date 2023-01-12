@@ -10,6 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import Head from "next/head";
+import NavBar from "../components/NavBar";
 import RelatedItems from "../components/RelatedItems";
 import styles from "../styles/Home.module.css";
 
@@ -34,6 +35,8 @@ export default function Home({ children }: props): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* NAVBAR  */}
+      <NavBar />
       <main className={`${styles.main} space-x-5`}>
         <div className={`${styles.subTotalAndRelated} space-y-4 w-1/4`}>
           <RelatedItems />

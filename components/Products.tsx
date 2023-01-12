@@ -111,7 +111,7 @@ function Product(): JSX.Element {
                       >
                         <span className="text-grey">This will be a gift.</span>
                         <Link
-                          href="/"
+                          href="/product-details/89s-123-abcd"
                           className="font-AmazonEmberRegular text-link text-font12 no-underline hover:underline"
                         >
                           Learn more
