@@ -9,6 +9,8 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
+import DeliveryMethod from "./DeliveryMethod";
+import ShipmentDetails from "./ShipmentDetails";
 
 function Address() {
   const title = (
@@ -42,28 +44,33 @@ function Address() {
       >
         CHECKOUT
       </Typography>
+      <>
+        <Card>
+          <CardHeader title={title} />
+          <hr />
+          <CardContent className="pl-6">
+            <Typography
+              gutterBottom
+              variant="h5"
+              component="div"
+              className="font-AmazonEmberMedium text-font15"
+            >
+              JOHN DOE
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              krispy kreme, bishop aboyade cole street, victoria island,
+              LEKKI-ONIRU ESTATE, Lagos
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              +2347062383712
+            </Typography>
+          </CardContent>
+        </Card>
 
-      <Card>
-        <CardHeader title={title} />
-        <hr />
-        <CardContent className="pl-6">
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            className="font-AmazonEmberMedium text-font15"
-          >
-            JOHN DOE
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            krispy kreme, bishop aboyade cole street, victoria island,
-            LEKKI-ONIRU ESTATE, Lagos
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            +2347062383712
-          </Typography>
-        </CardContent>
-      </Card>
+        <DeliveryMethod />
+
+        <ShipmentDetails />
+      </>
     </Box>
   );
 }

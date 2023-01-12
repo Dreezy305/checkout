@@ -20,11 +20,32 @@ function DeliveryMethod(): JSX.Element {
         component={"span"}
         className="text-title font-AmazonEmberMedium "
       >
-        1. ADDRESS DETAILS
+        2. DELIVERY METHOD
       </Typography>
     </Typography>
   );
-  return <div>DeliveryMethod</div>;
+  return (
+    <Card>
+      <CardHeader title={title} />
+      <hr />
+      <CardContent className="pl-6">
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          className="font-AmazonEmberMedium text-font15"
+        >
+          Door Delivery
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Delivery fee ₦520
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Delivery will be completed 3 days after order was placed
+        </Typography>
+      </CardContent>
+    </Card>
+  );
 }
 
 export default DeliveryMethod;
