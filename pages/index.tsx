@@ -31,7 +31,7 @@ export default function Home({ children }: props): any {
   // };
 
   useEffect(() => {
-    const cart: any = window.localStorage.getItem("cart");
+    const cart: any = localStorage.getItem("cart");
     const localCart: any = JSON.parse(cart);
     if (localCart) {
       setCart(localCart);

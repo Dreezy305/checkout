@@ -14,7 +14,7 @@ import React, { useEffect, useState } from "react";
 function NavBar(): JSX.Element {
   const [cartData, setCartDat] = useState<any>([]);
   useEffect(() => {
-    const count: any = window.localStorage.getItem("cart");
+    const count: any = localStorage.getItem("cart");
     setCartDat(count);
   }, []);
   return (
