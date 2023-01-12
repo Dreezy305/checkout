@@ -1,7 +1,9 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
+import { useRouter } from "next/router";
 import React from "react";
 
 function Subtotal() {
+  const router = useRouter();
   return (
     <Card sx={{ borderRadius: "0px" }}>
       <CardContent className="flex flex-col items-center justify-center space-y-3 mb-3">
@@ -33,6 +35,7 @@ function Subtotal() {
               boxShadow: "0 2px 5px 0 rgb(213 217 217 / 50%)",
               textTransform: "none",
             }}
+            onClick={() => router.push("/checkout")}
           >
             <span className="capitalize">Proceed</span> &nbsp;<span>to</span>{" "}
             &nbsp;

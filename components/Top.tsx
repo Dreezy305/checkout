@@ -104,7 +104,7 @@ function TopCard(): JSX.Element {
                 paddingTop: "10px",
                 paddingBottom: "10px",
               }}
-              onClick={() => router.push("/checkout")}
+              onClick={() => router.push("/cart")}
             >
               ADD TO CART
             </Button>
