@@ -21,5 +21,3 @@ function ProductDetails(): JSX.Element {
 }
 
 export default ProductDetails;
-
-// /Free delivery on thousands of products in Lagos, Ibadan & Abuja Details
