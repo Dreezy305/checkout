@@ -25,7 +25,7 @@ function CheckoutInfo(): JSX.Element {
 
       <Typography
         component={"span"}
-        className="text-gold font-AmazonEmberMedium "
+        className="text-gold font-AmazonEmberMedium cursor-pointer"
       >
         CHANGE
       </Typography>

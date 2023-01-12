@@ -6,18 +6,13 @@ import styles from "../../styles/Home.module.css";
 
 function index(): JSX.Element {
   return (
-    <main className={`flex flex-row items-center justify-center space-x-5`}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          width: "75%",
-        }}
-        className="mt-8"
-      >
+    <main
+      className={`${styles.main} flex flex-row items-center justify-center space-x-5`}
+    >
+      <div className="w-3/4 flex flex-row items-baseline justify-center space-x-5 mx-auto">
         <CheckoutInfo />
         <OrderSummary />
-      </Box>
+      </div>
     </main>
   );
 }
