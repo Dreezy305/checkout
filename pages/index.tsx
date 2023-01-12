@@ -14,22 +14,27 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import RelatedItems from "../components/RelatedItems";
 import styles from "../styles/Home.module.css";
-import { cartItems } from "../utils/data";
+// import { cartItems } from "../utils/data";
 
 type props = {
   children: React.ReactNode;
 };
 
-export default function Home({ children }: props): JSX.Element {
+export default function Home({ children }: props): any {
   const [cart, setCart] = useState([]);
-  let localCart: any = localStorage.getItem("cart");
-  // const addItem = (item: any) => {};
-  // const updateItem = (itemID: any, amount: any) => {};
-  // const removeItem = (itemID: any) => {};
+
+  const getCart = (): any => {
+    if (typeof window !== "undefined") {
+      const cart = localStorage.getItem("cart");
+      return cart;
+    }
+  };
 
   useEffect(() => {
-    localCart = JSON.parse(localCart);
-    if (localCart) setCart(localCart);
+    const localCart: any = JSON.parse(getCart());
+    if (localCart) {
+      setCart(localCart);
+    }
   }, []);
 
   const title = (

@@ -12,6 +12,14 @@ import { deepOrange } from "@mui/material/colors";
 import React from "react";
 
 function NavBar(): JSX.Element {
+  const getCart = (): any => {
+    if (typeof window !== "undefined") {
+      const cart = localStorage.getItem("cart");
+      return cart;
+    }
+  };
+  console.log(getCart());
+  const count = getCart();
   return (
     <div>
       <AppBar position="sticky" color="primary">
@@ -48,7 +56,7 @@ function NavBar(): JSX.Element {
               color="inherit"
               aria-label="menu"
             >
-              <Badge badgeContent={4} color="success">
+              <Badge badgeContent={count !== null ? count : 0} color="success">
                 <ShoppingCart />
               </Badge>
             </IconButton>
