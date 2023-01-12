@@ -18,6 +18,7 @@ module.exports = {
       font12: "12px",
       font13: "13px",
       font14: "14px",
+      font15: "15px",
       font18: "18px",
     },
     extend: {

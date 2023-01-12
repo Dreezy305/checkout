@@ -36,13 +36,16 @@ function CheckoutInfo(): JSX.Element {
       sx={{ display: "flex", flexDirection: "column" }}
       className="w-3/4 space-y-2 pl-3"
     >
-      <Typography component={"h5"} className="">
+      <Typography component={"h5"} className="font-AmazonEmberMedium text-font13 text-gray-400">
         CHECKOUT
       </Typography>
 
       <Card>
         <CardHeader title={title} />
         <hr />
+        <CardContent>
+
+        </CardContent>
       </Card>
     </Box>
   );
