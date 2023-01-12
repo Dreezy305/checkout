@@ -47,7 +47,7 @@ export default function Home({ children }: props): JSX.Element {
               <CardMedia
                 component="img"
                 sx={{ width: 180 }}
-                image="https://res.cloudinary.com/africahacks/image/upload/v1606074022/chimoney/Purple-100_z05fgn.jpg"
+                image="https://ng.jumia.is/unsafe/fit-in/500x500/filters:fill(white)/product/96/8236371/1.jpg?0528"
                 alt="Live from space album cover"
               />
               <Box
