@@ -23,15 +23,16 @@ type props = {
 export default function Home({ children }: props): any {
   const [cart, setCart] = useState([]);
 
-  const getCart = (): any => {
-    if (typeof window !== "undefined") {
-      const cart = localStorage.getItem("cart");
-      return cart;
-    }
-  };
+  // const getCart = (): any => {
+  //   if (typeof window !== "undefined") {
+  //     const cart = localStorage.getItem("cart");
+  //     return cart;
+  //   }
+  // };
 
   useEffect(() => {
-    const localCart: any = JSON.parse(getCart());
+    const cart: any = localStorage.getItem("cart");
+    const localCart: any = JSON.parse(cart);
     if (localCart) {
       setCart(localCart);
     }

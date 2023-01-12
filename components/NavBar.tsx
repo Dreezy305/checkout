@@ -9,17 +9,14 @@ import {
   Typography,
 } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function NavBar(): JSX.Element {
-  const getCart = (): any => {
-    if (typeof window !== "undefined") {
-      const cart = localStorage.getItem("cart");
-      return cart;
-    }
-  };
-  console.log(getCart());
-  const count = getCart();
+  const [cartData, setCartDat] = useState<any>([]);
+  useEffect(() => {
+    const count: any = localStorage.getItem("cart");
+    setCartDat(count);
+  }, []);
   return (
     <div>
       <AppBar position="sticky" color="primary">
@@ -56,7 +53,7 @@ function NavBar(): JSX.Element {
               color="inherit"
               aria-label="menu"
             >
-              <Badge badgeContent={count !== null ? count : 0} color="success">
+              <Badge badgeContent={cartData?.length} color="success">
                 <ShoppingCart />
               </Badge>
             </IconButton>
