@@ -30,6 +30,7 @@ module.exports = {
         yellowBorder: "#FCD200",
         lightGrey: "#555",
         brown: "#B12704",
+        gold: "#af7d15",
       },
       keyframes: {},
     },

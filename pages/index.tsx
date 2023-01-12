@@ -10,9 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import Head from "next/head";
-import Product from "../components/Products";
 import RelatedItems from "../components/RelatedItems";
-import Subtotal from "../components/Subtotal";
 import styles from "../styles/Home.module.css";
 
 type props = {
