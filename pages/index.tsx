@@ -56,7 +56,7 @@ export default function Home({ children }: props): JSX.Element {
               >
                 <CardContent sx={{ flex: "1 0 auto" }} className="">
                   <Link
-                    href="/"
+                    href="/product-details/89s-123-abcd"
                     className="no-underline cursor-pointer hover:underline"
                   >
                     <Typography

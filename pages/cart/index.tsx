@@ -1,4 +1,3 @@
-import Head from "next/head";
 import React from "react";
 import Product from "../../components/Products";
 import RelatedItems from "../../components/RelatedItems";
