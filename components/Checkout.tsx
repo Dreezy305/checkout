@@ -12,7 +12,7 @@ import React from "react";
 
 function Checkout(): JSX.Element {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Typography component={"h5"} className="">
         CHECKOUT
       </Typography>

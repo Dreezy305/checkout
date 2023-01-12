@@ -12,9 +12,9 @@ import React from "react";
 
 function OrderSummary() {
   return (
-    <Box>
+    <Box sx={{ display: "flex", flexDirection: "column" }}>
       <Typography component={"h5"} className="">
-        CHECKOUT
+        ORDER SUMMARY
       </Typography>
     </Box>
   );

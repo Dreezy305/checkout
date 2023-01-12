@@ -8,11 +8,13 @@ import {
   CardMedia,
   Rating,
   Stack,
-  Typography,
+  Typography
 } from "@mui/material";
+import { useRouter } from "next/router";
 import React from "react";
 
 function TopCard(): JSX.Element {
+  const router = useRouter();
   return (
     <Card sx={{ display: "flex" }}>
       <CardMedia
@@ -102,6 +104,7 @@ function TopCard(): JSX.Element {
                 paddingTop: "10px",
                 paddingBottom: "10px",
               }}
+              onClick={() => router.push("/checkout")}
             >
               ADD TO CART
             </Button>
