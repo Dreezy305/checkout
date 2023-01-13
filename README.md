@@ -12,25 +12,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. this project was built using nextjs, typescript, mui and tailwind
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+2. run yarn dev on local machine, visit [http://localhost:3000]
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. This app was hosted on vercel, open [https://checkout-rose.vercel.app/]
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. the app was built using module architecture, on mount, the product list is rendered with list of items availables for shopping
 
-## Learn More
+5. you can navigate from the product list to produt details page by clicking on the product title,
 
-To learn more about Next.js, take a look at the following resources:
+6 inside the product detail page, add the item to cart and increament or decrement the quantity you'd like to shop for
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+7. click on the cart icon, to navigate to the cart page, where you can proceed to checkout page to pay for your order
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+8. you can also choose to increase or decrease the quantity of items you wanna purchase in the cart

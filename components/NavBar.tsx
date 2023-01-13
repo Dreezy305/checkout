@@ -21,7 +21,7 @@ function NavBar({ cartObject }: props): JSX.Element {
   const router = useRouter();
   const [cartObj, setCartDat] = useState<any>([]);
   useEffect(() => {
-    
+
     const cartFromStorage: any = JSON.parse(localStorage.getItem("cart") || "[]");
     if (cartFromStorage?.length) {
       setCartDat(cartFromStorage);
@@ -65,7 +65,7 @@ function NavBar({ cartObject }: props): JSX.Element {
               sx={{ mr: 2, float: "right", cursor: "pointer" }}
               color="inherit"
               aria-label="menu"
-              onClick={() => router.push("/checkout")}
+              onClick={() => router.push("/cart")}
             >
               <Badge
                 badgeContent={
