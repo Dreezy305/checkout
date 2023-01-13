@@ -11,15 +11,19 @@ import {
 } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { ProductContext } from "./Top";
 
 type props = {
   cartObject?: any[];
 };
 
 function NavBar({ cartObject }: props): JSX.Element {
+  const ProductCart = useContext(ProductContext);
   const router = useRouter();
-  const [cartObj, setCartDat] = useState<any>([]);
+  const cartObj: any = ProductCart;
+
+  console.log(ProductCart, "lok");
 
   return (
     <div>
@@ -60,7 +64,7 @@ function NavBar({ cartObject }: props): JSX.Element {
               onClick={() => router.push("/cart")}
             >
               <Badge
-                badgeContent={<span>{cartObj?.length || 0}</span>}
+                badgeContent={<span>{cartObj || 0}</span>}
                 // badgeContent={<span>{cartFromStorage?.length}</span>}
                 color="success"
               >

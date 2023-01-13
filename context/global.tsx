@@ -1,7 +1,7 @@
 import React from "react";
 
-function productContext() {
+function Global() {
   return <div>productContext</div>;
 }
 
-export default productContext;
+export default Global;
