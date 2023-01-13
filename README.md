@@ -12,9 +12,11 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. this project was built using nextjs, typescript, mui and tailwind
+1. this project was built using react, nextjs, typescript, mui and tailwind
 
-2. run yarn dev on local machine, visit [http://localhost:3000]
+2. clone the project, run yarn install to update dependency package
+
+3. run yarn dev on local machine, visit [http://localhost:3000]
 
 3. This app was hosted on vercel, open [https://checkout-rose.vercel.app/]
 
