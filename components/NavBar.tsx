@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ShoppingCart } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
@@ -9,18 +10,25 @@ import {
   Typography,
 } from "@mui/material";
 import { deepOrange } from "@mui/material/colors";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
-function NavBar(): JSX.Element {
-  const [cartData, setCartDat] = useState<any>([]);
+type props = {
+  cartObject?: any[];
+};
+
+function NavBar({ cartObject }: props): JSX.Element {
+  const router = useRouter();
+  const [cartObj, setCartDat] = useState<any>([]);
   useEffect(() => {
-    const count: any = localStorage.getItem("cart");
-    if (count) {
-      setCartDat(count);
+    
+    const cartFromStorage: any = JSON.parse(localStorage.getItem("cart") || "[]");
+    if (cartFromStorage?.length) {
+      setCartDat(cartFromStorage);
     }
   }, []);
 
-  console.log(cartData, "lop");
+  console.log(cartObject, "lop");
   return (
     <div>
       <AppBar position="sticky" color="primary">
@@ -37,6 +45,7 @@ function NavBar(): JSX.Element {
               sx={{ mr: 2 }}
               color="inherit"
               aria-label="menu"
+              onClick={() => localStorage.clear()}
             >
               <MenuIcon />
             </IconButton>
@@ -53,11 +62,17 @@ function NavBar(): JSX.Element {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <IconButton
               edge="start"
-              sx={{ mr: 2, float: "right" }}
+              sx={{ mr: 2, float: "right", cursor: "pointer" }}
               color="inherit"
               aria-label="menu"
+              onClick={() => router.push("/checkout")}
             >
-              <Badge badgeContent={cartData?.length} color="success">
+              <Badge
+                badgeContent={
+                  <span>{cartObj?.length || cartObject?.length || 0}</span>
+                }
+                color="success"
+              >
                 <ShoppingCart />
               </Badge>
             </IconButton>

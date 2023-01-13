@@ -2,7 +2,7 @@ import { productInterface } from "./interfaces";
 export const productData: productInterface[] = [
   {
     id: "uuid-123-4bgh",
-    quantity: 2,
+    quantity: 0,
     selected: false,
     description:
       "Adobe Acrobat Professional DC | PDF converter | 12-mont Subscription with auto-renewal, PC/Mac",
@@ -12,7 +12,7 @@ export const productData: productInterface[] = [
   },
   {
     id: "uuid-345-5bgh",
-    quantity: 2,
+    quantity: 0,
     selected: false,
     description:
       "Adobe Acrobat Professional DC | PDF converter | 12-mont Subscription with auto-renewal, PC/Mac",
@@ -22,7 +22,7 @@ export const productData: productInterface[] = [
   },
   {
     id: "uuid-567-7bgh",
-    quantity: 2,
+    quantity: 0,
     selected: false,
     description:
       "Adobe Acrobat Professional DC | PDF converter | 12-mont Subscription with auto-renewal, PC/Mac",
@@ -32,7 +32,7 @@ export const productData: productInterface[] = [
   },
   {
     id: "uuid-897-8bgh",
-    quantity: 2,
+    quantity: 0,
     selected: false,
     description:
       "Adobe Acrobat Professional DC | PDF converter | 12-mont Subscription with auto-renewal, PC/Mac",

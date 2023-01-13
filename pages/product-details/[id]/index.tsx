@@ -9,7 +9,6 @@ import styles from "../../../styles/Home.module.css";
 
 function ProductDetails(): JSX.Element {
   const router = useRouter();
-  console.log(router.query);
   const queryObject = router.query;
   return (
     <>
