@@ -15,8 +15,12 @@ function NavBar(): JSX.Element {
   const [cartData, setCartDat] = useState<any>([]);
   useEffect(() => {
     const count: any = localStorage.getItem("cart");
-    setCartDat(count);
+    if (count) {
+      setCartDat(count);
+    }
   }, []);
+
+  console.log(cartData, "lop");
   return (
     <div>
       <AppBar position="sticky" color="primary">

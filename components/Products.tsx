@@ -13,6 +13,28 @@ import React, { useState } from "react";
 function Product(): JSX.Element {
   const [checked, setChecked] = useState<boolean>(true);
   const [age, setAge] = useState<string>("");
+  const [cart, setCart] = useState<any>([]);
+
+  const editItem = (itemID: any, amount: any) => {
+    let cartCopy = [...cart];
+    let existentItem = cartCopy.find((item) => item.ID == itemID);
+    if (!existentItem) return;
+    existentItem.quantity += amount;
+    if (existentItem.quantity <= 0) {
+      cartCopy = cartCopy.filter((item) => item.ID != itemID);
+    }
+    setCart(cartCopy);
+    let cartString = JSON.stringify(cartCopy);
+    localStorage.setItem("cart", cartString);
+  };
+
+  const removeItem = (itemID: any) => {
+    let cartCopy = [...cart];
+    cartCopy = cartCopy.filter((item) => item.ID != itemID);
+    setCart(cartCopy);
+    let cartString = JSON.stringify(cartCopy);
+    localStorage.setItem("cart", cartString);
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);

@@ -8,13 +8,36 @@ import {
   CardMedia,
   Rating,
   Stack,
-  Typography
+  Typography,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
+import { productInterface } from "../utils/interfaces";
 
-function TopCard(): JSX.Element {
+type props = {
+  queryObject?: productInterface;
+};
+
+function TopCard({ queryObject }: props): JSX.Element {
   const router = useRouter();
+  const [cart, setCart] = useState<any>([]);
+
+  const addItem = (item: any) => {
+    let cartCopy = [...cart];
+    let { id } = item;
+
+    let existingItem = cartCopy.find((cartItem) => cartItem.id == id);
+    if (existingItem) {
+      existingItem.quantity += item.quantity;
+    } else {
+      cartCopy.push(item);
+    }
+
+    setCart(cartCopy);
+    let stringCart = JSON.stringify(cartCopy);
+    localStorage.setItem("cart", stringCart);
+  };
+
   return (
     <Card sx={{ display: "flex" }}>
       <CardMedia
@@ -30,8 +53,7 @@ function TopCard(): JSX.Element {
               component="span"
               className="font-AmazonEmberRegular text-font18"
             >
-              Adobe Acrobat Professional DC | PDF converter | 12-month
-              Subscription with auto-renewal, PC/Mac
+              {queryObject?.name}
             </Typography>
             <Typography component={"span"}>
               <Rating
@@ -53,7 +75,7 @@ function TopCard(): JSX.Element {
               component="span"
               className="text-title text-font18 font-AmazonEmberBold pt-3"
             >
-              $179.99
+              {queryObject?.price}
             </Typography>
 
             <Typography component={"div"} className="flex flex-col">
@@ -61,7 +83,7 @@ function TopCard(): JSX.Element {
                 component={"span"}
                 className="text-gold font-AmazonEmberMedium text-font13"
               >
-                5 units left
+                {queryObject?.quantity} units left
               </Typography>
               <Typography
                 component={"span"}
@@ -104,7 +126,7 @@ function TopCard(): JSX.Element {
                 paddingTop: "10px",
                 paddingBottom: "10px",
               }}
-              onClick={() => router.push("/cart")}
+              onClick={() => addItem(queryObject)}
             >
               ADD TO CART
             </Button>

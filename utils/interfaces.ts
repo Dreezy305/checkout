@@ -1,7 +1,10 @@
 export interface productInterface {
   id?: string;
-  qty?: number;
+  quantity?: number;
   selected?: boolean;
   name?: string;
   description?: string;
+  price?: string;
+  rating?: number;
+  image?: string;
 }
