@@ -14,7 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { productInterface } from "../utils/interfaces";
 
 type props = {
@@ -22,21 +22,97 @@ type props = {
 };
 
 function TopCard({ queryObject }: props): JSX.Element {
+  // export const ProductContext = createContext();
   const router = useRouter();
   const [cart, setCart] = useState<any>([]);
   const [plus, setPlus] = useState<boolean>(false);
   const [count, setCount] = useState(1);
 
-  const increaseQty = (item: any, count: any) => {
+  const increaseQty = (item: any) => {
     let cartCopy: any = [...cart];
-    const newVal = parseInt(item.quantity) + count;
-    let newObj = { ...item, totalQty: newVal };
-    cartCopy.push(newObj);
-    setCart(cartCopy);
-    let stringCart = JSON.stringify(cartCopy);
-    localStorage.setItem("cart", stringCart);
-    return cartCopy;
+    let existingCartData: any = localStorage.getItem("cart");
+    if (existingCartData) {
+      existingCartData = JSON.parse(existingCartData);
+      let newArr: any = [];
+      // update existng item on cart
+      if (existingCartData?.find((i: any) => i.id == item.id)) {
+        newArr = existingCartData?.map((i: any) => {
+          if (i.id === item.id) {
+            let qty = parseInt(i.totalQty);
+            console.log(qty, "lol1");
+            if (qty) {
+              qty += 1;
+            } else {
+              qty = 1;
+            }
+            return { id: item.id, totalQty: qty };
+          }
+          return i;
+        });
+      } else {
+        // add new item to cart
+        newArr = existingCartData;
+        newArr.push({ id: item.id, totalQty: 1 });
+      }
+      console.log(newArr, "lol2");
+      cartCopy.push(newArr);
+      setCart(cartCopy);
+      let stringCart = JSON.stringify(newArr);
+      localStorage.setItem("cart", stringCart);
+      return cartCopy;
+    } else {
+      let newObj = { id: item.id, totalQty: 1 };
+      cartCopy.push(newObj);
+      setCart(cartCopy);
+      let stringCart = JSON.stringify(cartCopy);
+      localStorage.setItem("cart", stringCart);
+      return cartCopy;
+    }
   };
+
+  // const increaseQty = (item: any, count: any) => {
+  //   let cartCopy: any = [...cart];
+  //   let existingCartData: any = localStorage.getItem("cart");
+  //   if (existingCartData) {
+  //     existingCartData = JSON.parse(existingCartData);
+  //     let newArr: any = existingCartData?.map((i: any) => {
+  //       if (i.id === item.id) {
+  //         let qty = parseInt(i.totalQty);
+  //         console.log(qty, "lol1");
+  //         if (qty) {
+  //           qty += 1;
+  //         } else {
+  //           qty = 1;
+  //         }
+  //         return { id: item.id, totalQty: qty };
+  //       }
+  //       return i;
+  //     });
+  //     console.log(newArr, "lol2");
+  //     cartCopy.push(newArr);
+  //     setCart(cartCopy);
+  //     let stringCart = JSON.stringify(newArr);
+  //     localStorage.setItem("cart", stringCart);
+  //     return cartCopy;
+  //   } else {
+  //     let newObj = { id: item.id, totalQty: 1 };
+  //     cartCopy.push(newObj);
+  //     setCart(cartCopy);
+  //     let stringCart = JSON.stringify(cartCopy);
+  //     localStorage.setItem("cart", stringCart);
+  //     return cartCopy;
+  //   }
+  // };
+  // const increaseQty = (item: any, count: any) => {
+  //   let cartCopy: any = [...cart];
+  //   const newVal = parseInt(item.quantity) + count;
+  //   let newObj = { ...item, totalQty: newVal };
+  //   cartCopy.push(newObj);
+  //   setCart(cartCopy);
+  //   let stringCart = JSON.stringify(cartCopy);
+  //   localStorage.setItem("cart", stringCart);
+  //   return cartCopy;
+  // };
 
   const decreaseQty = (item: any, count: any) => {
     let cartCopy: any = [...cart];
@@ -46,7 +122,6 @@ function TopCard({ queryObject }: props): JSX.Element {
     setCart(cartCopy);
     let stringCart = JSON.stringify(cartCopy);
     localStorage.setItem("cart", stringCart);
-    console.log(cartCopy, "lo");
     return cartCopy;
   };
 
@@ -143,7 +218,7 @@ function TopCard({ queryObject }: props): JSX.Element {
                   component="label"
                   onClick={() => {
                     setCount((prev) => prev + 1);
-                    increaseQty(queryObject, count);
+                    increaseQty(queryObject);
                   }}
                 >
                   <AddBoxIcon />
@@ -172,7 +247,7 @@ function TopCard({ queryObject }: props): JSX.Element {
                   paddingBottom: "10px",
                 }}
                 onClick={() => {
-                  increaseQty(queryObject, 0);
+                  increaseQty(queryObject);
                   setPlus(true);
                 }}
                 // onClick={() => {

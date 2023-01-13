@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import RelatedItems from "../components/RelatedItems";
@@ -22,6 +23,7 @@ type props = {
 };
 
 export default function Home({ children }: props): any {
+  const router = useRouter();
   const [cart, setCart] = useState([]);
 
   // const getCart = (): any => {
@@ -31,13 +33,13 @@ export default function Home({ children }: props): any {
   //   }
   // };
 
-  useEffect(() => {
-    const cart: any = localStorage.getItem("cart");
-    const localCart: any = JSON.parse(cart);
-    if (localCart) {
-      setCart(localCart);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const cart: any = localStorage.getItem("cart");
+  //   const localCart: any = JSON.parse(cart);
+  //   if (localCart) {
+  //     setCart(localCart);
+  //   }
+  // }, []);
 
   const title = (
     <Typography

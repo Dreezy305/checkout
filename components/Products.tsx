@@ -81,12 +81,12 @@ function Product(): JSX.Element {
                 sx={{ display: "flex", flexDirection: "row", width: "90%" }}
                 className="space-x-1"
               >
-                <Checkbox
+                {/* <Checkbox
                   checked={checked}
                   onChange={handleChange}
                   inputProps={{ "aria-label": "controlled" }}
                   sx={{ boxShadow: "none", outline: "none" }}
-                />
+                /> */}
                 <CardMedia
                   component="img"
                   sx={{ width: "23%" }}

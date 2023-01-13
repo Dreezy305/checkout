@@ -20,15 +20,7 @@ type props = {
 function NavBar({ cartObject }: props): JSX.Element {
   const router = useRouter();
   const [cartObj, setCartDat] = useState<any>([]);
-  useEffect(() => {
 
-    const cartFromStorage: any = JSON.parse(localStorage.getItem("cart") || "[]");
-    if (cartFromStorage?.length) {
-      setCartDat(cartFromStorage);
-    }
-  }, []);
-
-  console.log(cartObject, "lop");
   return (
     <div>
       <AppBar position="sticky" color="primary">
@@ -68,9 +60,8 @@ function NavBar({ cartObject }: props): JSX.Element {
               onClick={() => router.push("/cart")}
             >
               <Badge
-                badgeContent={
-                  <span>{cartObj?.length || cartObject?.length || 0}</span>
-                }
+                badgeContent={<span>{cartObj?.length || 0}</span>}
+                // badgeContent={<span>{cartFromStorage?.length}</span>}
                 color="success"
               >
                 <ShoppingCart />
